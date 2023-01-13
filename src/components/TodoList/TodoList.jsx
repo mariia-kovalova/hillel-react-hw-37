@@ -13,9 +13,5 @@ export function TodoList({ tasks }) {
 }
 
 TodoList.propTypes = {
-  tasks: PropTypes.exact({
-    id: PropTypes.number.isRequired,
-    task: PropTypes.string.isRequired,
-    isDone: PropTypes.bool.isRequired,
-  }),
+  tasks: PropTypes.arrayOf(PropTypes.object.isRequired),
 };

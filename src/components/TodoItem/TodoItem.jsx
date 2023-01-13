@@ -2,7 +2,7 @@ import { Item } from "./TodoItem.styled";
 import PropTypes from "prop-types";
 
 export function TodoItem({ taskText, taskStatus }) {
-  return <Item status={taskStatus}>{taskText}</Item>;
+  return <Item taskStatus={taskStatus}>{taskText}</Item>;
 }
 
 TodoItem.propTypes = {
