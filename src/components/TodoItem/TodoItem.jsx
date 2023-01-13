@@ -1,11 +1,21 @@
-import { Item } from "./TodoItem.styled";
 import PropTypes from "prop-types";
+import { Item, TaskText, DeleteBtn } from "./TodoItem.styled";
 
-export function TodoItem({ taskText, taskStatus }) {
-  return <Item taskStatus={taskStatus}>{taskText}</Item>;
+export function TodoItem({ id, taskTitle, isCompleted, onDelete, onComplete }) {
+  return (
+    <Item>
+      <TaskText onClick={() => onComplete(id)} isCompleted={isCompleted}>
+        {taskTitle}
+      </TaskText>
+      <DeleteBtn onClick={() => onDelete(id)}>X</DeleteBtn>
+    </Item>
+  );
 }
 
 TodoItem.propTypes = {
-  taskText: PropTypes.string.isRequired,
-  taskStatus: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  taskTitle: PropTypes.string.isRequired,
+  isCompleted: PropTypes.bool.isRequired,
+  onDelete: PropTypes.func.isRequired,
+  onComplete: PropTypes.func.isRequired,
 };
