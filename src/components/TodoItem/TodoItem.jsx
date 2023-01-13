@@ -1,5 +1,11 @@
 import { Item } from "./TodoItem.styled";
+import PropTypes from "prop-types";
 
-export function TodoItem({ taskInfo: { task, isDone } }) {
-  return <Item>{task}</Item>;
+export function TodoItem({ taskText, taskStatus }) {
+  return <Item status={taskStatus}>{taskText}</Item>;
 }
+
+TodoItem.propTypes = {
+  taskText: PropTypes.string.isRequired,
+  taskStatus: PropTypes.bool.isRequired,
+};
