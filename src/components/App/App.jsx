@@ -65,5 +65,3 @@ export function App() {
     </Container>
   );
 }
-
-// https://github.com/typicode/json-server
