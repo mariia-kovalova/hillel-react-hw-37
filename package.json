@@ -2,8 +2,7 @@
   "name": "hillel-react-hw-37",
   "version": "0.1.0",
   "private": true,
-    "homepage": "https://mariia-kovalova.github.io/hillel-react-hw-37/",
-
+  "homepage": "https://mariia-kovalova.github.io/hillel-react-hw-37/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -20,8 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-        "lint:js": "eslint src/**/*.{js,jsx}"
-
+    "lint:js": "eslint src/**/*.{js,jsx}",
+    "server": "json-server --watch db.json -p 3333 -d 300"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "json-server": "^0.17.1",
     "prop-types": "^15.8.1"
   }
 }
