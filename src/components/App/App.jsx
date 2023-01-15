@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { save, load } from "../../utils/storage-api";
 import { TodoList } from "../TodoList/TodoList";
 import { TodoForm } from "../TodoForm/TodoForm";
+import { Notify } from "notiflix";
 import { Container, Title } from "./App.styled";
 
 const LOCAL_STORAGE_KEY = "todo:tasks";
@@ -21,11 +22,16 @@ export function App() {
   }
 
   function addTask(taskTitle) {
+    const title = taskTitle.trim();
+    if (title=== "") {
+      Notify.warning("Please enter a task title");
+      return;
+    }
     const newTasks = [
       ...tasks,
       {
         id: crypto.randomUUID(),
-        title: taskTitle,
+        title,
         isCompleted: false,
       },
     ];
