@@ -3,7 +3,7 @@ import { List } from './TodoList.styled';
 import { TodoItem } from '../TodoItem/TodoItem';
 
 export const TodoList = () => {
-  const todos = useSelector(state => state.todos);
+  const todos = useSelector(state => state.todos.todos);
 
   return (
     <List>
