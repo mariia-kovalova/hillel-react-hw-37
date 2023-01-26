@@ -1,3 +1,1 @@
-# TODO LIST
-
--localStorage;
+# TODO LIST with Redux
