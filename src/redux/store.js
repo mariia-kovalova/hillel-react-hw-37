@@ -1,12 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import todosReducer from './todoReducer';
-
-// export const store = configureStore({
-//   reducer: {
-//     todos: todosReducer,
-//   },
-// });
-
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import {
   persistStore,
