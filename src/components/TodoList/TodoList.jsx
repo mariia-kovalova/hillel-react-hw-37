@@ -1,26 +1,15 @@
-import { List } from "./TodoList.styled";
-import { TodoItem } from "../TodoItem/TodoItem";
-import PropTypes from "prop-types";
+import { useSelector } from 'react-redux';
+import { List } from './TodoList.styled';
+import { TodoItem } from '../TodoItem/TodoItem';
 
-export function TodoList({ tasks, onDelete, onComplete }) {
+export const TodoList = () => {
+  const todos = useSelector(state => state.todos.todos);
+
   return (
     <List>
-      {tasks.map(({ id, title, isCompleted }) => (
-        <TodoItem
-          key={id}
-          id={id}
-          taskTitle={title}
-          isCompleted={isCompleted}
-          onDelete={onDelete}
-          onComplete={onComplete}
-        />
+      {todos.map(({ id, text, isCompleted }) => (
+        <TodoItem key={id} id={id} text={text} isCompleted={isCompleted} />
       ))}
     </List>
   );
-}
-
-TodoList.propTypes = {
-  tasks: PropTypes.arrayOf(PropTypes.object.isRequired),
-  onDelete: PropTypes.func.isRequired,
-  onComplete: PropTypes.func.isRequired,
 };
